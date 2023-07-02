@@ -1,0 +1,93 @@
+.header {
+  background-color: transparent;
+  width: 100%;
+  padding: 1rem 0;
+  font-size: 2rem;
+  height: 15vh;
+}
+.header .sticky {
+  background-color: var(--primary-color);
+  border-radius: 2rem;
+  z-index: 100;
+  padding: 0.5rem 2rem;
+  display: flex;
+}
+.header .sticky .nav__logo {
+  color: var(--font-color);
+}
+.header .sticky li a {
+  color: var(--font-color);
+}
+.nav {
+  margin: 0;
+  position: fixed;
+  width: 90%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8vh;
+  transition: all 2s ease-in-out;
+}
+
+.nav__logo {
+  text-transform: capitalize;
+  transition: all 2s ease-in-out;
+}
+
+.nav__menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 3rem;
+  transition: all 2s ease-in-out;
+
+  li a {
+    transition: color 1s ease;
+    transition: all 2s ease-in-out;
+    &:hover {
+      color: var(--comp-pink);
+    }
+  }
+}
+
+.nav__toggler {
+  display: none;
+}
+
+.nav__toggler div {
+  width: 2.5rem;
+  height: 0.2rem;
+  margin: 0.4rem;
+  background-color: black;
+  transition: 0.3s ease-in;
+}
+@media screen and (max-width: 768px) {
+  .nav__toggler {
+    display: block;
+    cursor: pointer;
+  }
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 93vh;
+    width: 50vw;
+    background: var(--primary-color);
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: 0.5s ease-in;
+  }
+  .nav__active {
+    transform: translateX(0);
+  }
+  .toggle .line1 {
+    transform: rotate(-45deg) translate(-4px, 9px);
+  }
+  .toggle .line2 {
+    opacity: 0;
+  }
+  .toggle .line3 {
+    transform: rotate(45deg) translate(2px, -5px);
+  }
+}
